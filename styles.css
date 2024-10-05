@@ -1,0 +1,213 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif; /* Оставьте основной шрифт для тела */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Хедер */
+.header {
+    background-color: rgba(255, 255, 255, 0.6); /* Слегка прозрачный фон */
+    color: white;
+    padding: 10px 20px; /* Добавлен горизонтальный отступ для всего хедера */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Используйте flexbox для выравнивания */
+    align-items: center; /* Центрирование по вертикали */
+    backdrop-filter: blur(10px); /* Размытие фона */
+}
+
+.logo-image {
+    width: 65px; /* Задайте фиксированную ширину логотипа */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    border-radius: 10px; /* Закругленные края */
+    margin-right: 1000px; /* Отступ справа от логотипа */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto; /* Сдвиг меню вправо */
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    font-family: 'Montserrat', sans-serif; /* Новый шрифт для навигации */
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(12, 44, 119);
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #f0c14b; /* Цвет при наведении */
+}
+
+
+/* Секция героя */
+.hero {
+    height: 100vh;
+    background-image: url('nest\ one.jpg'); /* Установите изображение фона */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding-top: 80px; /* Чтобы не перекрывать фиксированный хедер */
+    filter: brightness(70%); /* Затемнение фона */
+}
+
+.hero::before {
+    content: ""; /* Создание псевдоэлемента */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Затемнение фона */
+    z-index: 1; /* На заднем плане */
+}
+
+.hero h1,
+.hero p {
+    position: relative; /* Для размещения текста над затемнением */
+    z-index: 2; /* Поверх псевдоэлемента */
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+
+
+.cta-button {
+    background-color: #f0c14b;
+    color: #001f3f;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e3b13f;
+}
+
+/* О нас */
+.about {
+    background-color: #fff; /* Белый фон */
+    padding: 80px 0; /* Отступ сверху и снизу */
+    text-align: center; /* Центрирование текста */
+}
+
+.about h2 {
+    font-size: 36px; /* Размер заголовка */
+    color: #001f3f; /* Темно-синий цвет */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.about p {
+    font-size: 18px; /* Размер текста */
+    max-width: 800px; /* Максимальная ширина блока */
+    margin: 0 auto; /* Центрирование */
+}
+
+
+/* Проекты */
+.projects {
+    background-color: #f5f5f5; /* Светло-серый фон */
+    padding: 80px 0; /* Отступ сверху и снизу */
+}
+
+.projects h2 {
+    font-size: 36px; /* Размер заголовка */
+    color: #001f3f; /* Темно-синий цвет */
+    text-align: center; /* Центрирование заголовка */
+    margin-bottom: 40px; /* Отступ снизу */
+}
+
+.project-grid {
+    display: flex; /* Использование flexbox */
+    justify-content: space-between; /* Распределение пространства между элементами */
+    flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
+}
+
+.project-item {
+    flex: 0 1 30%; /* Ширина элемента */
+    background-color: white; /* Белый фон */
+    padding: 20px; /* Отступ внутри элемента */
+    margin-bottom: 20px; /* Отступ снизу */
+    border-radius: 10px; /* Закругленные края */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация */
+}
+
+.project-item:hover {
+    transform: translateY(-10px); /* Подъем элемента при наведении */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Более выраженная тень при наведении */
+}
+
+.project-item img {
+    width: 100%; /* Ширина изображения */
+    border-radius: 10px; /* Закругленные края */
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+.project-item h3 {
+    font-size: 20px; /* Размер заголовка проекта */
+    color: #001f3f; /* Темно-синий цвет */
+    text-align: center; /* Центрирование заголовка */
+}
+/* Контакты */
+.contact {
+    background-color: #fff; /* Белый фон */
+    padding: 80px 0; /* Отступ сверху и снизу */
+    text-align: center; /* Центрирование текста */
+}
+
+.contact h2 {
+    font-size: 36px; /* Размер заголовка */
+    color: #001f3f; /* Темно-синий цвет */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.contact p {
+    font-size: 18px; /* Размер текста */
+    color: #555; /* Серый цвет текста */
+}
+
+
+/* Футер */
+.footer {
+    background-color: #001f3f; /* Темно-синий фон */
+    color: white; /* Белый текст */
+    text-align: center; /* Центрирование текста */
+    padding: 20px 0; /* Отступ сверху и снизу */
+    position: relative; /* Позиционирование */
+}
+
+.footer p {
+    margin: 0; /* Удаление отступов */
+    font-size: 16px; /* Размер текста */
+}
